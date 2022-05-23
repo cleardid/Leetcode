@@ -3,27 +3,27 @@
 #include<stdlib.h>
 #include<string>
 #include<string.h>
-#pragma warning(disable:4996)
+#pragma warning(disable:4996)       //strcpy
 using namespace std;
 
 class Solution {
 public:
     //https://leetcode.cn/leetbook/read/top-interview-questions-easy/xnx13t/
     int reverse(int x) {
-        string s = to_string(x);                  //±ä³É×Ö·û´®
-        std::reverse(s.begin(), s.end());       //·­×ª×Ö·û´®
+        string s = to_string(x);                //å˜æˆå­—ç¬¦ä¸²
+        std::reverse(s.begin(), s.end());       //ç¿»è½¬å­—ç¬¦ä¸²
         int ans = 0;
         try {
-            ans = stoi(s);                      //±ä»ØÊı×Ö
-            if (x < 0) ans = -ans;              //xÊÇ¸ºÊı£¬¼ÓÉÏ¸ººÅ
+            ans = stoi(s);                      //å˜å›æ•°å­—
+            if (x < 0) ans = -ans;              //xæ˜¯è´Ÿæ•°ï¼ŒåŠ ä¸Šè´Ÿå·
         }
-        catch (exception ex) {}                 //Òç³ö£¬É¶Ò²²»×ö£¬·µ»ØÁã
+        catch (exception ex) {}                 //æº¢å‡ºï¼Œå•¥ä¹Ÿä¸åšï¼Œè¿”å›é›¶
         return ans;
     }
 
     //https://leetcode.cn/leetbook/read/top-interview-questions-easy/xn5z8r/
     int firstUniqChar(string s) {
-        int* ar = new int[26] {};                      //×ÖÄ¸³öÏÖ´ÎÊı
+        int* ar = new int[26] {};                      //å­—æ¯å‡ºç°æ¬¡æ•°
         int n = s.length();
         char* chr = new char[n + 1];
         strcpy(chr, s.c_str());
@@ -61,7 +61,7 @@ public:
     bool isAnagram(string s, string t) {
         if (s.size() != t.size())
             return false;
-        int* ar = new int[26]{};                      //×ÖÄ¸³öÏÖ´ÎÊı
+        int* ar = new int[26]{};                      //å­—æ¯å‡ºç°æ¬¡æ•°
         int* br = new int[26]{};
         int n = s.length();
         char* chr_s = new char[n + 1];
